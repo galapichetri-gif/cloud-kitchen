@@ -80,7 +80,6 @@ padding:20px;
 border-radius:15px;
 text-align:center;
 box-shadow:0 5px 15px rgba(0,0,0,.08);
-position:relative;
 }
 
 .card img{
@@ -105,7 +104,6 @@ font-size:22px;
 text-decoration:none;
 }
 
-/* CART BOX */
 #cartBox{
 position:fixed;
 bottom:90px;
@@ -126,7 +124,6 @@ z-index:999;
 <div class="logo">🍛 KARISHMA HOME MADE</div>
 <nav>
 <a href="#menu">Menu</a>
-<a href="#order">Order</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
@@ -141,7 +138,7 @@ z-index:999;
 <a href="upi.html" class="btn">Pay Online 💳</a>
 </section>
 
-<!-- CART BOX -->
+<!-- CART -->
 <div id="cartBox">
 <h3>🛒 Cart</h3>
 <div id="cartItems"></div>
@@ -191,7 +188,7 @@ z-index:999;
 let cart = [];
 
 function addToCart(name, price){
-cart.push({name,price});
+cart.push({name, price});
 updateCart();
 }
 
@@ -210,17 +207,25 @@ document.getElementById("total").innerText = "Total: ₹" + total;
 }
 
 function checkout(){
-let msg = "🛒 Order:%0A";
+
+if(cart.length === 0){
+alert("Cart is empty!");
+return;
+}
+
+let message = "🍛 *NEW ORDER*%0A%0A";
 let total = 0;
 
-cart.forEach(i=>{
-msg += i.name + " - ₹" + i.price + "%0A";
-total += i.price;
+cart.forEach((item, index)=>{
+message += (index+1) + ". " + item.name + " - ₹" + item.price + "%0A";
+total += item.price;
 });
 
-msg += "%0ATotal: ₹" + total;
+message += "%0A💰 *Total: ₹" + total + "*";
 
-window.open("https://wa.me/919864856051?text=" + msg,"_blank");
+let phone = "919864856051";
+
+window.open("https://wa.me/" + phone + "?text=" + message, "_blank");
 }
 </script>
 
