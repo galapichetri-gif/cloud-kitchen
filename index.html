@@ -32,7 +32,10 @@ top:0;
 z-index:1000;
 }
 
-.logo{font-size:24px;font-weight:700;}
+.logo{
+font-size:24px;
+font-weight:700;
+}
 
 nav a{
 color:white;
@@ -41,25 +44,35 @@ margin-left:20px;
 }
 
 .hero{
-padding:60px 20px;
+padding:80px 20px;
 text-align:center;
 background:linear-gradient(135deg,#fff3e0,#ffffff);
 }
 
+.hero h1{
+font-size:42px;
+color:#c0392b;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:25px;
+}
+
 .btn{
 display:inline-block;
-padding:12px 20px;
+padding:14px 28px;
 background:#c0392b;
 color:white;
-border:none;
 text-decoration:none;
 border-radius:8px;
 font-weight:600;
-margin:5px;
-cursor:pointer;
 }
 
-.section{padding:60px 8%;}
+.section{
+padding:60px 8%;
+}
 
 .title{
 text-align:center;
@@ -76,22 +89,43 @@ gap:20px;
 
 .card{
 background:white;
-padding:20px;
+padding:25px;
 border-radius:15px;
 text-align:center;
 box-shadow:0 5px 15px rgba(0,0,0,.08);
-position:relative;
 }
 
-.card img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:12px;
+.card h3{
+color:#c0392b;
 margin-bottom:10px;
 }
 
-.price{color:#27ae60;font-size:18px;font-weight:bold;margin:10px 0;}
+.price{
+font-size:20px;
+font-weight:bold;
+color:#27ae60;
+margin:10px 0;
+}
+
+.about{
+background:#fff3e0;
+text-align:center;
+padding:60px 20px;
+}
+
+.contact{
+background:#c0392b;
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+}
 
 .whatsapp{
 position:fixed;
@@ -99,23 +133,22 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:15px;
+padding:15px 18px;
 border-radius:50%;
-font-size:22px;
+font-size:24px;
 text-decoration:none;
 }
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:12px;
+margin-bottom:15px;
+}
 
-/* CART BOX */
-#cartBox{
-position:fixed;
-bottom:90px;
-right:20px;
-background:white;
-padding:15px;
-width:260px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
-z-index:999;
+.card:hover{
+transform:translateY(-5px);
+transition:0.3s;
 }
 </style>
 </head>
@@ -123,106 +156,317 @@ z-index:999;
 <body>
 
 <header>
-<div class="logo">🍛 KARISHMA HOME MADE</div>
+<div class="logo">KARISHMA HOME MADE 🍛</div>
+
 <nav>
+<a href="#">Home</a>
 <a href="#menu">Menu</a>
-<a href="#order">Order</a>
 <a href="#contact">Contact</a>
+<a href="#order">Order</a>
 </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-<img src="myphoto.jpg.jpg" style="width:150px;height:150px;border-radius:50%;object-fit:cover;">
-<h1>Authentic Homemade Food</h1>
-<p>Fresh • Hygienic • Home Delivered</p>
+<h1>Authentic Homemade Indian Food</h1>
 
-<a href="https://wa.me/919864856051" class="btn">WhatsApp Order</a>
-<a href="upi.html" class="btn">Pay Online 💳</a>
+<p>
+Freshly Cooked With Love & Delivered To Your Doorstep
+</p>
+<img src="myphoto.jpg.jpg" alt="My Photo"
+style="width:180px;height:180px;border-radius:50%;object-fit:cover;margin:15px 0;">
+
+<a href="https://wa.me/919864856051" class="btn">
+Order on WhatsApp
+<br><br>
+
+<a href="upi.html" class="btn">
+💳 Pay Online
+</a>
+</a>
 </section>
+<section class="section">
 
-<!-- CART BOX -->
-<div id="cartBox">
-<h3>🛒 Cart</h3>
-<div id="cartItems"></div>
-<p id="total">Total: ₹0</p>
-<button class="btn" onclick="checkout()">Checkout</button>
+<h2 class="title">🔥 Today's Special</h2>
+
+<div class="card">
+<img src="biryani.jpg.jpg" alt="Chicken Biryani">
+<h3>🍛 Chicken Biryani</h3>
+<div class="price">₹180</div>
+<p>Most Popular Dish Today</p>
+
+<a href="https://wa.me/919864856051?text=Hello, I want to order Chicken Biryani" class="btn">
+Order Now
+</a>
+
 </div>
 
-<!-- MENU -->
+</section>
+
 <section class="section" id="menu">
-<h2 class="title">Menu 🍽️</h2>
+
+<h2 class="title">Our Menu 🍽️</h2>
 
 <div class="grid">
 
 <div class="card">
-<img src="biryani.jpg.jpg">
-<h3>Chicken Biryani</h3>
-<p class="price">₹180</p>
-<button class="btn" onclick="addToCart('Chicken Biryani',180)">Add to Cart</button>
+<img src="biryani.jpg.jpg" alt="Chicken Biryani">
+<h3>🍛 Chicken Biryani</h3>
+<div class="price">₹180</div>
+<p>Delicious aromatic biryani</p>
+<a href="https://wa.me/919864856051?text=Hello, I want to order Chicken Biryani" class="btn">
+Order Now
+</a>
 </div>
 
 <div class="card">
-<img src="butter-chicken.jpg.jpg">
-<h3>Butter Chicken</h3>
-<p class="price">₹220</p>
-<button class="btn" onclick="addToCart('Butter Chicken',220)">Add to Cart</button>
+<img src="butter-chicken.jpg.jpg" alt="Butter Chicken">
+<h3>🍗 Butter Chicken</h3>
+<div class="price">₹220</div>
+<p>Rich creamy chicken curry</p>
+<a href="https://wa.me/919864856051?text=Hello, I want to order Butter Chicken" class="btn">
+Order Now
+</a>
 </div>
 
 <div class="card">
-<img src="paneer.jpg.jpg">
-<h3>Paneer Masala</h3>
-<p class="price">₹160</p>
-<button class="btn" onclick="addToCart('Paneer Masala',160)">Add to Cart</button>
+<img src="chicken-curry.jpg.jpg" alt="Chicken Curry">
+<h3>🍲 Chicken Curry</h3>
+<div class="price">₹190</div>
+<p>Traditional Indian curry</p>
+<a href="https://wa.me/919864856051?text=Hello, I want to order Chicken curry" class="btn">
+Order Now
+</a>
+</div>
+
+<div class="card">
+<img src="paneer.jpg.jpg" alt="Paneer Butter Masala">
+<h3>🧀 Paneer Butter Masala</h3>
+<div class="price">₹160</div>
+<p>Soft paneer in creamy gravy</p>
+<a href="https://wa.me/919864856051?text=Hello, I want to order Paneer Butter Masala" class="btn">
+Order Now
+</a>
+</div>
+
+<div class="card">
+<img src="dal-tadka.jpg.jpg" alt="Dal Tadka">
+<h3>🥣 Dal Tadka</h3>
+<div class="price">₹120</div>
+<p>Authentic homemade dal</p>
+<a href="https://wa.me/919864856051?text=Hello, I want to order Dal Tadka" class="btn">
+Order Now
+</a>
+</div>
+
+<div class="card">
+<img src="naan.jpg.jpg" alt="Butter Naan">
+<h3>🫓 Butter Naan</h3>
+<div class="price">₹40</div>
+<p>Fresh tandoori bread</p>
+<a href="https://wa.me/919864856051?text=Hello, I want to order Butter Naan" class="btn">
+Order Now
+</a>
 </div>
 
 </div>
+
+</section>
+<!-- Customer Reviews Start -->
+<section class="section">
+
+<h2 class="title">⭐ Customer Reviews</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>Very tasty homemade food. Fast delivery.</p>
+</div>
+
+<div class="card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>Chicken Biryani was amazing. Highly recommended.</p>
+</div>
+
+<div class="card">
+<h3>⭐⭐⭐⭐⭐</h3>
+<p>Fresh food and excellent service.</p>
+</div>
+
+</div>
+
+</section>
+<!-- Customer Reviews End -->
+
+<section class="about">
+<section class="section">
+
+<h2 class="title">📷 Food Gallery</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="biryani.jpg.jpg" alt="Chicken Biryani">
+</div>
+
+<div class="card">
+<img src="butter-chicken.jpg.jpg" alt="Butter Chicken">
+</div>
+
+<div class="card">
+<img src="chicken-curry.jpg.jpg" alt="Chicken Curry">
+</div>
+
+<div class="card">
+<img src="paneer.jpg.jpg" alt="Paneer Butter Masala">
+</div>
+
+<div class="card">
+<img src="dal-tadka.jpg.jpg" alt="Dal Tadka">
+</div>
+
+<div class="card">
+<img src="naan.jpg.jpg" alt="Butter Naan">
+</div>
+
+</div>
+
 </section>
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-<h2 class="title">Contact</h2>
+<h2 class="title">About Us</h2>
+
+<p>
+KARISHMA HOME MADE serves fresh homemade Indian food prepared with quality ingredients and traditional recipes.
+</p>
+
+</section>
+<section class="section">
+
+<h2 class="title">🛵 Delivery Information</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>⚡ Fast Delivery</h3>
+<p>Delivery within local area.</p>
+</div>
+
+<div class="card">
+<h3>💳 Payment</h3>
+<p>Cash & UPI Accepted.</p>
+</div>
+
+<div class="card">
+<h3>📞 Easy Ordering</h3>
+<p>Order directly through WhatsApp.</p>
+</div>
+
+</div>
+
+</section>
+<section class="section">
+
+<h2 class="title">📍 Our Location</h2>
+
+<div class="card">
+
+<p>Visit KARISHMA HOME MADE</p>
+
+<iframe
+src="https://www.google.com/maps?q=Assam&output=embed"
+width="100%"
+height="300"
+style="border:0;border-radius:10px;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+</div>
+
+</section>
+<section class="section" id="order">
+
+<h2 class="title">📋 Place Your Order</h2>
+
+<div class="card">
+
+<form>
+
+<input type="text" placeholder="Your Name" required style="width:100%;padding:12px;margin:10px 0;">
+
+<input type="tel" placeholder="Phone Number" required style="width:100%;padding:12px;margin:10px 0;">
+
+<input type="text" placeholder="Food Item" required style="width:100%;padding:12px;margin:10px 0;">
+
+<textarea placeholder="Delivery Address" required style="width:100%;padding:12px;margin:10px 0;height:100px;"></textarea>
+
+<button type="submit" class="btn">
+Submit Order
+</button>
+
+</form>
+
+</div>
+
+</section>
+<form onsubmit="sendOrder(event)">
+
+<input type="text" id="name" placeholder="Your Name" required style="width:100%;padding:12px;margin:10px 0;">
+
+<input type="tel" id="phone" placeholder="Phone Number" required style="width:100%;padding:12px;margin:10px 0;">
+
+<input type="text" id="food" placeholder="Food Item" required style="width:100%;padding:12px;margin:10px 0;">
+
+<textarea id="address" placeholder="Delivery Address" required style="width:100%;padding:12px;margin:10px 0;height:100px;"></textarea>
+
+<button type="submit" class="btn">
+📲 Submit Order
+</button>
+
+</form>
+<section class="contact" id="contact">
+
+<h2>Contact Us</h2>
+
 <p>📞 9864856051</p>
+
+<p>🛵 Home Delivery Available</p>
+
+<p>⏰ Open: 10:00 AM - 10:00 PM</p>
+
 </section>
 
-<a class="whatsapp" href="https://wa.me/919864856051">💬</a>
+<footer>
+© 2026 KARISHMA HOME MADE. All Rights Reserved.
+</footer>
 
+<a class="whatsapp" href="https://wa.me/919864856051">
+💬
+</a>
 <script>
-let cart = [];
+function sendOrder(event){
+event.preventDefault();
 
-function addToCart(name, price){
-cart.push({name,price});
-updateCart();
-}
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let food = document.getElementById("food").value;
+let address = document.getElementById("address").value;
 
-function updateCart(){
-let box = document.getElementById("cartItems");
-let total = 0;
+let message =
+"🍛 New Order%0A%0A" +
+"👤 Name: " + name + "%0A" +
+"📞 Phone: " + phone + "%0A" +
+"🍽 Food: " + food + "%0A" +
+"📍 Address: " + address;
 
-box.innerHTML = "";
-
-cart.forEach(item=>{
-total += item.price;
-box.innerHTML += `<p>${item.name} - ₹${item.price}</p>`;
-});
-
-document.getElementById("total").innerText = "Total: ₹" + total;
-}
-
-function checkout(){
-let msg = "🛒 Order:%0A";
-let total = 0;
-
-cart.forEach(i=>{
-msg += i.name + " - ₹" + i.price + "%0A";
-total += i.price;
-});
-
-msg += "%0ATotal: ₹" + total;
-
-window.open("https://wa.me/919864856051?text=" + msg,"_blank");
+window.open(
+"https://wa.me/919864856051?text=" + message,
+"_blank"
+);
 }
 </script>
+
+
 
 </body>
 </html>
