@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KARISHMA HOME MADE 🍛</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -29,6 +29,7 @@ justify-content:space-between;
 align-items:center;
 position:sticky;
 top:0;
+z-index:1000;
 }
 
 .logo{
@@ -43,8 +44,8 @@ margin-left:20px;
 }
 
 .hero{
-text-align:center;
 padding:80px 20px;
+text-align:center;
 background:linear-gradient(135deg,#fff3e0,#ffffff);
 }
 
@@ -75,9 +76,9 @@ padding:60px 8%;
 
 .title{
 text-align:center;
-font-size:32px;
+font-size:34px;
+margin-bottom:40px;
 color:#c0392b;
-margin-bottom:30px;
 }
 
 .grid{
@@ -90,8 +91,8 @@ gap:20px;
 background:white;
 padding:25px;
 border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
 text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
 .card h3{
@@ -99,11 +100,24 @@ color:#c0392b;
 margin-bottom:10px;
 }
 
+.price{
+font-size:20px;
+font-weight:bold;
+color:#27ae60;
+margin:10px 0;
+}
+
+.about{
+background:#fff3e0;
+text-align:center;
+padding:60px 20px;
+}
+
 .contact{
 background:#c0392b;
 color:white;
 text-align:center;
-padding:50px 20px;
+padding:60px 20px;
 }
 
 footer{
@@ -140,7 +154,6 @@ text-decoration:none;
 </header>
 
 <section class="hero">
-
 <h1>Authentic Homemade Indian Food</h1>
 
 <p>
@@ -150,7 +163,6 @@ Freshly Cooked With Love & Delivered To Your Doorstep
 <a href="https://wa.me/918638890291" class="btn">
 Order on WhatsApp
 </a>
-
 </section>
 
 <section class="section" id="menu">
@@ -161,35 +173,51 @@ Order on WhatsApp
 
 <div class="card">
 <h3>🍛 Chicken Biryani</h3>
+<div class="price">₹180</div>
 <p>Delicious aromatic biryani</p>
 </div>
 
 <div class="card">
 <h3>🍗 Butter Chicken</h3>
+<div class="price">₹220</div>
 <p>Rich creamy chicken curry</p>
 </div>
 
 <div class="card">
 <h3>🍲 Chicken Curry</h3>
-<p>Traditional Indian style curry</p>
+<div class="price">₹190</div>
+<p>Traditional Indian curry</p>
 </div>
 
 <div class="card">
 <h3>🧀 Paneer Butter Masala</h3>
+<div class="price">₹160</div>
 <p>Soft paneer in creamy gravy</p>
 </div>
 
 <div class="card">
 <h3>🥣 Dal Tadka</h3>
+<div class="price">₹120</div>
 <p>Authentic homemade dal</p>
 </div>
 
 <div class="card">
 <h3>🫓 Butter Naan</h3>
+<div class="price">₹40</div>
 <p>Fresh tandoori bread</p>
 </div>
 
 </div>
+
+</section>
+
+<section class="about">
+
+<h2 class="title">About Us</h2>
+
+<p>
+KARISHMA HOME MADE serves fresh homemade Indian food prepared with quality ingredients and traditional recipes.
+</p>
 
 </section>
 
