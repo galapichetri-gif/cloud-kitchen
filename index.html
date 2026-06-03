@@ -407,7 +407,21 @@ Submit Order
 </div>
 
 </section>
+<form onsubmit="sendOrder(event)">
 
+<input type="text" id="name" placeholder="Your Name" required style="width:100%;padding:12px;margin:10px 0;">
+
+<input type="tel" id="phone" placeholder="Phone Number" required style="width:100%;padding:12px;margin:10px 0;">
+
+<input type="text" id="food" placeholder="Food Item" required style="width:100%;padding:12px;margin:10px 0;">
+
+<textarea id="address" placeholder="Delivery Address" required style="width:100%;padding:12px;margin:10px 0;height:100px;"></textarea>
+
+<button type="submit" class="btn">
+📲 Submit Order
+</button>
+
+</form>
 <section class="contact" id="contact">
 
 <h2>Contact Us</h2>
@@ -427,6 +441,30 @@ Submit Order
 <a class="whatsapp" href="https://wa.me/919864856051">
 💬
 </a>
+<script>
+function sendOrder(event){
+event.preventDefault();
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let food = document.getElementById("food").value;
+let address = document.getElementById("address").value;
+
+let message =
+"🍛 New Order%0A%0A" +
+"👤 Name: " + name + "%0A" +
+"📞 Phone: " + phone + "%0A" +
+"🍽 Food: " + food + "%0A" +
+"📍 Address: " + address;
+
+window.open(
+"https://wa.me/919864856051?text=" + message,
+"_blank"
+);
+}
+</script>
+
+
 
 </body>
 </html>
